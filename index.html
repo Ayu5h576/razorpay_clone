@@ -6,6 +6,7 @@
     <title>razorpay</title>
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="stylesheet" href="main.css">
+    <script type="module" src="index.js" defer></script>
 <style>
   .corefeature{
     background-size: 100% 100%;
@@ -75,12 +76,12 @@
        
       </ul>
 
-      <div class="flex space-x-4 ">
+      <div class="flex space-x-4">
           <img src="./images/india-flag.svg" 
-          width="28px" height=" 20px"  class="py-2 hidden lg:block" > 
+          width="30px" height=" 20px"  class="py-2 hidden lg:block" > 
            <button class="py-1 px-3 font-mullish text-white border-lightBlue border rounded text-s font-bold">Log In</button>
-      <button class="py-2 px-3  font-mullish rounded-sm texte-sm font-bold flex flex-row gap-1 bg-white text-lightBlue border transition-all duration-200 hover:text-lightBlue500 hidden lg:block">Sign up 
-        <svg
+      <button class="py-2 px-3  font-mullish rounded-sm texte-sm font-bold flex gap-0 bg-white text-lightBlue border transition-all duration-200 hover:text-lightBlue500 hidden lg:block">Sign up 
+        <!-- <svg
     viewBox="0 0 24 24"
     focusable="false"
     class="w-[20px] h-[20px]  mt-1 "
@@ -89,7 +90,7 @@
       fill="currentColor"
       d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
     ></path>
-  </svg>
+  </svg> -->
       </button>
         </div>
 
@@ -106,10 +107,14 @@
     <p class="font-mullish text-[18px] leading-7 text-white opacity-70">
       Accept payment from customer. Barcelona will win the 2025 champions league. You will never walk alone. 
     </p>
-    <button 
-    class="bg-lightBlue text-white py-[14px] px-[18px]  rounded-md font-mullish font-bold hover:bg-lightBlue500 transition-all duration-200 ">Sign Up Now
-    
-</button>
+    <button id="showFormBtn" class="bg-lightBlue text-white py-3 px-5 rounded">Sign Up Now</button>
+
+<!-- <script>
+  
+function goToLogin(){
+    window.location.href='login.html';
+}
+</script> -->
   </div >
   <!--right part-->
   <img src="./images/hero-illustration.jpg" alt=""  class="w-full max-w-[680px]">
@@ -1838,5 +1843,29 @@ bg-no-repeat bg-cover bg-center mt-14  relative corefeature ">
      </div>
    </div>
  </footer>
+
+<!-- Slide-in form from the left -->
+<div id="formPanel" class="fixed top-0 left-0 h-[874px] w-[400px] bg-[#181C2E] shadow-lg transform -translate-x-full transition-transform duration-500 z-50 ">
+  <div class="flex justify-between items-center p-4 border-b">
+    <h2 class="text-xl font-bold text-white">Sign Up</h2>
+    <button id="closeFormBtn" class="text-[#ffffff] font-semibold text-2xl">&times;</button>
+  </div>
+  <form id="loginForm" class="flex flex-col gap-4 p-4">
+    <div>
+      <label for="name" class="text-white">Name:</label>
+      <input type="text" id="name" class="w-full p-2 rounded border" />
+    </div>
+    <div>
+      <label for="email" class="text-white">Email:</label>
+      <input type="email" id="email" class="w-full p-2 rounded border" />
+    </div>
+    <div>
+      <label for="password" class="text-white">Password:</label>
+      <input type="password" id="password" class="w-full p-2 rounded border" />
+    </div>
+    <button type="submit" id="submit" class="bg-[#02042A] text-white px-4 py-2 rounded hover:bg-blue-700">Submit</button>
+  </form>
+</div>
+
 </body>
 </html>
